@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+     .mole{
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background-color: brown;
+        margin: 10px;
+     }
+     
+     .active{
+        background-color: yellow;
+     }
+     #win{
+        display: none;
+        font-size: 30px;
+        color: red;
+     }
+    
+    
+
+    </style>
+</head>
+<body>
+    <h1>Whoack a mole</h1>
+    <div id="score">Score: <span id="sc">0</span> </div>
+    <section>
+       <button class="mole active"></button>
+       <button class="mole"></button>
+       <button class="mole"></button>
+    </section>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+    <button id="reset">reset</button>
+    <div id="win">You win !</div>
+</body>
+<script>
+    const mole=document.querySelectorAll(".mole"); 
+    const score=document.getElementById("sc");
+    const start=document.getElementById("start");
+    const stop=document.getElementById("stop");
+    const reset=document.getElementById("reset");
+    const win=document.getElementById("win");
+   
+    let s=0
+    let gameinterval;
+
+    function startGame(){
+        s=0
+        score.textContent=s
+        win.style.display="none"
+        reset.style.display="none"
+        clearInterval(gameinterval);
+        gameinterval=setInterval(clickmole,1000);     
+    }
+
+    function clickmole(){
+        mole.forEach((e) => {
+            return e.classList.remove("active"); 
+          
+        });
+         const index=Math.floor(Math.random()*mole.length);
+           mole[index].classList.add("active"); 
+        }
+
+    mole.forEach((e) => {
+        e.addEventListener('click',()=>{
+            if(e.classList.contains("active")){
+                s++;
+                score.textContent=s;
+                e.classList.remove("active");
+            if(s>=5){
+                win.style.display="block"
+                stopGame();
+                }
+            }
+        })
+    } );
+
+
+    function stopGame(){
+        clearInterval(gameinterval);
+        mole.forEach((e) => {
+            return e.classList.remove("active"); 
+        });
+        reset.style.display="inline-block";
+
+
+    }
+
+    
+
+    start.addEventListener('click',startGame);
+    stop.addEventListener('click',stopGame);
+    reset.addEventListener('click',startGame);
+
+</script>
+</html>

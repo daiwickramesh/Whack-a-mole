@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .mole {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color:red;
+            margin: 10px;
+            
+        }
+        .mole:hover{
+            background-color:green;
+        }
+        .active{
+            background-color:yellow;
+        }
+        .mole {
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  background-color: #8b0000;
+  border: 6px solid #ffd700; 
+  padding: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.mole:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px green;
+}
+.game-board {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* space between moles */
+  margin: 30px auto;
+  padding: 10px;
+  background-color: #fff8dc; /* light beige */
+  border: 3px solid #daa520; /* golden border */
+  border-radius: 12px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  width: fit-content;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f0f8ff;
+  text-align: center;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+#score {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+.game-board {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 10px;
+  background-color: #fff8dc;
+  border: 3px solid #daa520;
+  border-radius: 12px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mole {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #8b0000;
+  border: 6px solid #ffd700;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.mole:active {
+  transform: scale(0.9);
+  background-color: #ff6347;
+}
+
+.active {
+  background-color: green !important;
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.6);
+}
+
+button {
+  margin: 5px;
+  padding: 10px 20px;
+  font-size: 1em;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+#start {
+  background-color: #32cd32;
+  color: white;
+}
+
+#stop {
+  background-color: #ff4500;
+  color: white;
+}
+
+#reset {
+  background-color: #4682b4;
+  color: white;
+}
+
+#win {
+  margin-top: 20px;
+  font-size: 1.5em;
+  color: #228b22;
+  font-weight: bold;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+    <h1>Whack-A-Mole</h1>
+    <div id="score">Score: <span></span></div>
+    <section class="game-board">
+        <button class="mole"></button>
+        <button class="mole"></button>
+        <button class="mole"></button>
+    </section>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+    <button id="reset">Reset Game</button>
+    <div id="win">You Win!!</div>
+    </div>
+    
+</body>
+<script>
+    const mole=document.getElementsByClassName('mole'); 
+    const score=document.getElementById("sc");
+    const start=document.getElementById("start");
+    const stop=document.getElementById("stop");
+    const reset=document.getElementById("reset");
+    const win=document.getElementById("win");
+
+    function startGame(){ 
+
+    }
+
+    function stopGame(){ 
+
+    }
+
+    function resetGame(){ 
+
+    }
+
+    start.addEventListener('click',startGame);
+    stop.addEventListener('click',stopGame);
+    reset.addEventListener('click',resetGame);
+    
+
+</script>
+</html>
